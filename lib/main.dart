@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_course/screens/listview2_screen.dart';
+import 'screens/screens.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Listview2Screen(),
+      initialRoute: 'home',
+      routes: {
+        'home' : (BuildContext context) => const HomeScreen(),
+        'listview1': (BuildContext context) => const Listview1Screen(),
+        'listview2': (BuildContext context) => const Listview2Screen(),
+        'alerts' : (BuildContext context) => const AlertScreen(),
+        'card' : (BuildContext context) => const CardScreen()
+
+      },
     );
   }
 }
