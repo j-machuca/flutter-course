@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/router/app_routes.dart';
+import 'package:flutter_course/themes/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.lightTheme,
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),
-      // Generates a route for non existing patters in route object
+      // Generates a route for non existing patterns in route object
+      // agruments passing directly
+      // onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings)
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
