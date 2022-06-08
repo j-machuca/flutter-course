@@ -7,6 +7,7 @@ class CustomInputField extends StatelessWidget {
   final IconData? icon;
   final IconData? suffixIcon;
   final TextInputType? keyboardType;
+  final bool obscured;
 
   const CustomInputField({
     Key? key,
@@ -16,11 +17,13 @@ class CustomInputField extends StatelessWidget {
     this.icon,
     this.suffixIcon,
     this.keyboardType,
+    this.obscured = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscured,
       autofocus: true,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       initialValue: "",

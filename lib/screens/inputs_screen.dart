@@ -32,6 +32,12 @@ class InputScreen extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
               ),
               SizedBox(height: 30),
+              CustomInputField(
+                lableText: "Password",
+                hintText: "Password del Usuario",
+                obscured: true,
+              ),
+              SizedBox(height: 30),
             ],
           ),
         ),
